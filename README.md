@@ -21,15 +21,16 @@ predict whether a booking will be canceled before arrival.
 ```
 .
 ├── data/
-│   ├── hotel_bookings.csv          <- Original dataset (do not modify)
-│   └── cleaned_hotel_bookings.csv  <- Cleaned dataset (used for modeling)
+│   ├── hotel_bookings.csv                     <- Original dataset (do not modify)
+│   └── cleaned_hotel_bookings.csv             <- Cleaned dataset (used for modeling)
 │
 ├── notebooks/
-│   ├── 01_understanding_data.ipynb <- Step 1: EDA, distributions, outlier detection
-│   ├── 02_cleaning_data.ipynb      <- Step 2: Missing values, leakage removal, feature engineering
-│   └── 03_model_training.ipynb     <- Step 3: Preprocessing pipeline, Logistic Regression baseline
+│   ├── 01_understanding_data.ipynb            <- Step 1: EDA, distributions, outlier detection
+│   ├── 02_cleaning_data.ipynb                 <- Step 2: Missing values, leakage removal, feature engineering
+│   └── 03_model_training.ipynb                <- Step 3: Preprocessing pipeline, Logistic Regression baseline
+│   └── 04_conclusion_and_discussion.ipynb     <- Step 4: Conclusion, Discussion
 │
-└── README.md                       <- Project documentation
+└── README.md                                  <- Project documentation
 ```
 
 ## 🔍 Data Source
@@ -52,6 +53,7 @@ predict whether a booking will be canceled before arrival.
 | 1 | `01_understanding_data.ipynb` | Explored dataset structure, data types, missing values, constant features, numerical distributions (lead_time, ADR), outlier detection, and categorical breakdowns |
 | 2 | `02_cleaning_data.ipynb` | Handled missing values, removed invalid records (0 guests / 0 nights), removed negative ADR, dropped data leakage columns, engineered features (total_guests, total_nights, has_agent, has_company) |
 | 3 | `03_model_training.ipynb` | Built preprocessing pipeline (StandardScaler + OneHotEncoder), trained Logistic Regression baseline, evaluated with F1-Score and ROC-AUC |
+| 4 | `04_conclusion_and_discussion.ipynb` | Summarized findings, model performance, recommendations, limitations, and future improvements |
 
 ---
 

@@ -20,11 +20,11 @@ predict whether a booking will be canceled before arrival.
 ## Repository Structure
 ```
 .
-├── data/
+├── Data/
 │   ├── hotel_bookings.csv                     <- Original dataset (do not modify)
 │   └── hotel_bookings_cleaned_model.csv       <- Cleaned dataset (used for modeling)
 │
-├── notebooks/
+├── Notebook/
 │   ├── 01_understanding_data.ipynb            <- Step 1: EDA, distributions, outlier detection
 │   ├── 02_cleaning_data.ipynb                 <- Step 2: Missing values, leakage removal, feature engineering
 │   ├── 03_model_training.ipynb                <- Step 3: Preprocessing pipeline, Logistic Regression baseline
@@ -50,10 +50,10 @@ predict whether a booking will be canceled before arrival.
 
 | Step | Notebook | Description |
 | :--- | :--- | :--- |
-| 1 | `01_understanding_data.ipynb` | Explored dataset structure, data types, missing values, constant features, numerical distributions (lead_time, ADR), outlier detection, and categorical breakdowns |
-| 2 | `02_cleaning_data.ipynb` | Handled missing values, removed invalid records (0 guests / 0 nights), removed negative ADR, dropped data leakage columns, engineered features (total_guests, total_nights, has_agent, has_company) |
-| 3 | `03_model_training.ipynb` | Built preprocessing pipeline (StandardScaler + OneHotEncoder), trained Logistic Regression baseline, evaluated with F1-Score and ROC-AUC |
-| 4 | `04_conclusion_and_discussion.ipynb` | Summarized findings, model performance, recommendations, limitations, and future improvements |
+| 1 | `Notebook/01_understanding_data.ipynb` | Explored dataset structure, data types, missing values, constant features, numerical distributions (lead_time, ADR), outlier detection, and categorical breakdowns |
+| 2 | `Notebook/02_cleaning_data.ipynb` | Handled missing values, removed invalid records (0 guests / 0 nights), removed negative ADR, dropped data leakage columns, engineered features (total_guests, total_nights, has_agent, has_company) |
+| 3 | `Notebook/03_model_training.ipynb` | Built preprocessing pipeline (StandardScaler + OneHotEncoder), trained Logistic Regression baseline, evaluated with F1-Score and ROC-AUC |
+| 4 | `Notebook/04_conclusion_and_discussion.ipynb` | Summarized findings, model performance, recommendations, limitations, and future improvements |
 
 ---
 
@@ -103,17 +103,17 @@ pip install pandas numpy matplotlib seaborn scikit-learn joblib
 3. Run the notebooks in order:
 
 ```text
-notebooks/01_understanding_data.ipynb
-notebooks/02_cleaning_data.ipynb
-notebooks/03_model_training.ipynb
-notebooks/04_conclusion_and_discussion.ipynb
+Notebook/01_understanding_data.ipynb
+Notebook/02_cleaning_data.ipynb
+Notebook/03_model_training.ipynb
+Notebook/04_conclusion_and_discussion.ipynb
 ```
 
 4. Make sure the dataset files are in the `data/` folder:
 
 ```text
-data/hotel_bookings.csv
-data/hotel_bookings_cleaned_model.csv
+Data/hotel_bookings.csv
+Data/hotel_bookings_cleaned_model.csv
 ```
 ___
 

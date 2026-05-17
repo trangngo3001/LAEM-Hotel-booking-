@@ -96,8 +96,12 @@ predict whether a booking will be canceled before arrival.
 
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn joblib
-Open the project in Jupyter Notebook, JupyterLab, or VS Code.
-2. Run the notebooks in order:
+
+2. Open the project in Jupyter Notebook, JupyterLab, or VS Code.
+
+3. Run the notebooks in order:
+
+```text
 notebooks/01_understanding_data.ipynb
 notebooks/02_cleaning_data.ipynb
 notebooks/03_model_training.ipynb

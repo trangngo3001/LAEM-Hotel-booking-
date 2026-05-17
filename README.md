@@ -22,7 +22,7 @@ predict whether a booking will be canceled before arrival.
 .
 ├── data/
 │   ├── hotel_bookings.csv                     <- Original dataset (do not modify)
-│   └── cleaned_hotel_bookings.csv             <- Cleaned dataset (used for modeling)
+│   └── hotel_bookings_cleaned_model.csv       <- Cleaned dataset (used for modeling)
 │
 ├── notebooks/
 │   ├── 01_understanding_data.ipynb            <- Step 1: EDA, distributions, outlier detection

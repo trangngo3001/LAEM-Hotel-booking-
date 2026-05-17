@@ -96,6 +96,7 @@ predict whether a booking will be canceled before arrival.
 
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn joblib
+```
 
 2. Open the project in Jupyter Notebook, JupyterLab, or VS Code.
 
@@ -106,6 +107,14 @@ notebooks/01_understanding_data.ipynb
 notebooks/02_cleaning_data.ipynb
 notebooks/03_model_training.ipynb
 notebooks/04_conclusion_and_discussion.ipynb
+```
+
+4. Make sure the dataset files are in the `data/` folder:
+
+```text
+data/hotel_bookings.csv
+data/hotel_bookings_cleaned_model.csv
+```
 ___
 
 ## 📚 References

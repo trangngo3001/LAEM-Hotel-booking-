@@ -18,7 +18,8 @@ predict whether a booking will be canceled before arrival.
 ---
 
 ## 📂 Repository Structure
-
+```
+.
 ├── data/
 │   ├── hotel_bookings.csv          <- Original dataset (do not modify)
 │   └── cleaned_hotel_bookings.csv  <- Cleaned dataset (used for modeling)
@@ -29,6 +30,7 @@ predict whether a booking will be canceled before arrival.
 │   └── 03_model_training.ipynb     <- Step 3: Preprocessing pipeline, Logistic Regression baseline
 │
 └── README.md                       <- Project documentation
+```
 
 ---
 

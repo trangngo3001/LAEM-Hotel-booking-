@@ -12,12 +12,14 @@ predict whether a booking will be canceled before arrival.
 | :--- | :--- | :--- |
 | **Ngô Thùy Trang** | Team Lead / Data Analyst / ML Engineer | Dataset sourcing, project planning, data cleaning, model training |
 | **Nguyễn Quốc Đạt** | Data Engineer / ML Engineer | Dataset sourcing, data cleaning, model training |
-| **Lê Tiến Hiếu** | ML Engineer / Data Engineer | Data sourcing, data understanding, model training |
+| **Lê Tiến Hiếu** | ML Engineer / Data Engineer | Dataset sourcing, data understanding, model training |
 | **Vũ Ngọc Liên** | Data Analyst / Data Engineer | Data understanding, discussion & insights analysis, README |
 
 ---
 
 ## 📂 Repository Structure
+```
+.
 ```
 .
 ├── data/
@@ -31,8 +33,6 @@ predict whether a booking will be canceled before arrival.
 │
 └── README.md                       <- Project documentation
 ```
-
----
 
 ## 🔍 Data Source
 

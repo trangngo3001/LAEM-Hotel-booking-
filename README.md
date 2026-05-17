@@ -27,7 +27,7 @@ predict whether a booking will be canceled before arrival.
 ├── notebooks/
 │   ├── 01_understanding_data.ipynb            <- Step 1: EDA, distributions, outlier detection
 │   ├── 02_cleaning_data.ipynb                 <- Step 2: Missing values, leakage removal, feature engineering
-│   └── 03_model_training.ipynb                <- Step 3: Preprocessing pipeline, Logistic Regression baseline
+│   ├── 03_model_training.ipynb                <- Step 3: Preprocessing pipeline, Logistic Regression baseline
 │   └── 04_conclusion_and_discussion.ipynb     <- Step 4: Conclusion, Discussion
 │
 └── README.md                                  <- Project documentation
@@ -73,8 +73,7 @@ predict whether a booking will be canceled before arrival.
 - **Returning guests** cancel at only **14.5%** vs **37.8%** for first-time guests
 
 **On the model:**
-- Logistic Regression baseline achieves approximately **~80% accuracy** and
-  **~0.85 ROC-AUC** on the test set
+- Logistic Regression baseline achieved approximately 0.80 accuracy and 0.85 ROC-AUC on the test set.
 - Results confirm that deposit type, lead time, hotel type, and special requests
   are among the most informative features for classification
 - Class imbalance (63/37) means **F1-Score and ROC-AUC are the primary metrics**
@@ -88,10 +87,22 @@ predict whether a booking will be canceled before arrival.
 > directly encode the target variable and were removed before any modeling step.
 > Including them produces ~100% accuracy with no real predictive value.
 
-> **Class Imbalance:** The 63/37 split requires `class_weight='balanced'` in
-> Logistic Regression and F1/AUC as primary evaluation metrics.
+> **Class Imbalance:** Class Imbalance: The target variable has a 63/37 class distribution. Therefore, F1-Score and ROC-AUC are used alongside accuracy to evaluate model performance more appropriately.
 
 ---
+## 🚀 How to Run
+
+1. Install the required libraries:
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn joblib
+Open the project in Jupyter Notebook, JupyterLab, or VS Code.
+2. Run the notebooks in order:
+notebooks/01_understanding_data.ipynb
+notebooks/02_cleaning_data.ipynb
+notebooks/03_model_training.ipynb
+notebooks/04_conclusion_and_discussion.ipynb
+___
 
 ## 📚 References
 

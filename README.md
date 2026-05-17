@@ -1,0 +1,100 @@
+# 🏨 Hotel Booking Cancellation Prediction
+
+This project uses Python to analyze hotel booking data, identify key factors
+driving cancellation behavior, and build a binary classification model to
+predict whether a booking will be canceled before arrival.
+
+---
+
+## 👥 Team Members & Responsibilities
+
+| Full Name | Role | Responsibilities |
+| :--- | :--- | :--- |
+| **Ngô Thùy Trang** | Team Lead / Data Analyst / ML Engineer | Dataset sourcing, project planning, data cleaning, model training |
+| **Nguyễn Quốc Đạt** | Data Engineer / ML Engineer | Dataset sourcing, data cleaning, model training |
+| **Lê Tiến Hiếu** | ML Engineer / Data Engineer | Data sourcing, data understanding, model training |
+| **Vũ Ngọc Liên** | Data Analyst / Data Engineer | Data understanding, discussion & insights analysis, README |
+
+---
+
+## 📂 Repository Structure
+├── data/
+│   ├── hotel_bookings.csv          <- Original dataset (do not modify)
+│   └── cleaned_hotel_bookings.csv  <- Cleaned dataset (used for modeling)
+│
+├── notebooks/
+│   ├── 01_understanding_data.ipynb <- Step 1: EDA, distributions, outlier detection
+│   ├── 02_cleaning_data.ipynb      <- Step 2: Missing values, leakage removal, feature engineering
+│   └── 03_model_training.ipynb     <- Step 3: Preprocessing pipeline, Logistic Regression baseline
+│
+└── README.md                       <- Project documentation
+
+---
+
+## 🔍 Data Source
+
+- **Platform:** Kaggle — [Hotel Booking Demand](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand)
+- **Author:** Jesse Mostipak (2020)
+- **Original paper:** Antonio, Almeida & Nunes (2019) — *Data in Brief*, Vol. 22, pp. 41–49
+- **Description:** The dataset contains **119,390 rows and 32 columns**, covering hotel
+  reservations from July 2015 to August 2017. Each row represents one booking and
+  includes information on booking timing, guest profile, pricing, deposit policy,
+  and reservation outcome.
+- **Target variable:** `is_canceled` — 0 = Not Canceled (63.0%) | 1 = Canceled (37.0%)
+
+---
+
+## ⚙️ Workflow Overview
+
+| Step | Notebook | Description |
+| :--- | :--- | :--- |
+| 1 | `01_understanding_data.ipynb` | Explored dataset structure, data types, missing values, constant features, numerical distributions (lead_time, ADR), outlier detection, and categorical breakdowns |
+| 2 | `02_cleaning_data.ipynb` | Handled missing values, removed invalid records (0 guests / 0 nights), removed negative ADR, dropped data leakage columns, engineered features (total_guests, total_nights, has_agent, has_company) |
+| 3 | `03_model_training.ipynb` | Built preprocessing pipeline (StandardScaler + OneHotEncoder), trained Logistic Regression baseline, evaluated with F1-Score and ROC-AUC |
+
+---
+
+## 💡 Key Findings
+
+**On the data:**
+- **Deposit type** is the single strongest predictor: bookings with a Non Refund
+  deposit cancel at **99.4%**, while No Deposit bookings cancel at only **28.4%**
+- **Lead time** has a monotonic relationship with cancellation risk:
+  bookings made 180+ days in advance cancel at **57.0%** vs only **20.9%** for
+  bookings within 30 days
+- **City Hotel** cancels at **41.7%** vs Resort Hotel at **27.8%** — reflecting
+  the difference between business and leisure traveler behavior
+- Guests with **0 special requests + lead time > 90 days** cancel at **63.9%**
+  — the highest-volume risk profile in the dataset (32,507 bookings)
+- Guests with **prior cancellation history** cancel at **94.4%** on their next booking
+- **Returning guests** cancel at only **14.5%** vs **37.8%** for first-time guests
+
+**On the model:**
+- Logistic Regression baseline achieves approximately **~80% accuracy** and
+  **~0.85 ROC-AUC** on the test set
+- Results confirm that deposit type, lead time, hotel type, and special requests
+  are among the most informative features for classification
+- Class imbalance (63/37) means **F1-Score and ROC-AUC are the primary metrics**
+  — accuracy alone is misleading
+
+---
+
+## ⚠️ Important Notes
+
+> **Data Leakage:** Columns `reservation_status` and `reservation_status_date`
+> directly encode the target variable and were removed before any modeling step.
+> Including them produces ~100% accuracy with no real predictive value.
+
+> **Class Imbalance:** The 63/37 split requires `class_weight='balanced'` in
+> Logistic Regression and F1/AUC as primary evaluation metrics.
+
+---
+
+## 📚 References
+
+- Antonio, N., Almeida, A., & Nunes, L. (2019). Hotel booking demand datasets.
+  *Data in Brief*, 22, 41–49. https://doi.org/10.1016/j.dib.2018.11.126
+- Mostipak, J. (2020). Hotel Booking Demand. *Kaggle*.
+  https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand
+- Pedregosa, F. et al. (2011). Scikit-learn: Machine learning in Python.
+  *Journal of Machine Learning Research*, 12, 2825–2830.

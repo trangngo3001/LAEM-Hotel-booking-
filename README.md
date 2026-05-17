@@ -1,4 +1,4 @@
-# 🏨 Hotel Booking Cancellation Prediction
+# Hotel Booking Cancellation Prediction
 
 This project uses Python to analyze hotel booking data, identify key factors
 driving cancellation behavior, and build a binary classification model to
@@ -6,7 +6,7 @@ predict whether a booking will be canceled before arrival.
 
 ---
 
-## 👥 Team Members & Responsibilities
+## Team Members & Responsibilities
 
 | Full Name | Role | Responsibilities |
 | :--- | :--- | :--- |
@@ -17,7 +17,7 @@ predict whether a booking will be canceled before arrival.
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 ```
 .
 ├── data/
@@ -33,7 +33,7 @@ predict whether a booking will be canceled before arrival.
 └── README.md                                  <- Project documentation
 ```
 
-## 🔍 Data Source
+## Data Source
 
 - **Platform:** Kaggle — [Hotel Booking Demand](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand)
 - **Author:** Jesse Mostipak (2020)
@@ -46,7 +46,7 @@ predict whether a booking will be canceled before arrival.
 
 ---
 
-## ⚙️ Workflow Overview
+## Workflow Overview
 
 | Step | Notebook | Description |
 | :--- | :--- | :--- |
@@ -57,7 +57,7 @@ predict whether a booking will be canceled before arrival.
 
 ---
 
-## 💡 Key Findings
+## Key Findings
 
 **On the data:**
 - **Deposit type** is the single strongest predictor: bookings with a Non Refund
@@ -81,7 +81,7 @@ predict whether a booking will be canceled before arrival.
 
 ---
 
-## ⚠️ Important Notes
+## Important Notes
 
 > **Data Leakage:** Columns `reservation_status` and `reservation_status_date`
 > directly encode the target variable and were removed before any modeling step.
@@ -90,7 +90,7 @@ predict whether a booking will be canceled before arrival.
 > **Class Imbalance:** Class Imbalance: The target variable has a 63/37 class distribution. Therefore, F1-Score and ROC-AUC are used alongside accuracy to evaluate model performance more appropriately.
 
 ---
-## 🚀 How to Run
+## How to Run
 
 1. Install the required libraries:
 
@@ -117,7 +117,7 @@ data/hotel_bookings_cleaned_model.csv
 ```
 ___
 
-## 📚 References
+## References
 
 - Antonio, N., Almeida, A., & Nunes, L. (2019). Hotel booking demand datasets.
   *Data in Brief*, 22, 41–49. https://doi.org/10.1016/j.dib.2018.11.126

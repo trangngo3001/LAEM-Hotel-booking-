@@ -20,8 +20,6 @@ predict whether a booking will be canceled before arrival.
 ## 📂 Repository Structure
 ```
 .
-```
-.
 ├── data/
 │   ├── hotel_bookings.csv          <- Original dataset (do not modify)
 │   └── cleaned_hotel_bookings.csv  <- Cleaned dataset (used for modeling)

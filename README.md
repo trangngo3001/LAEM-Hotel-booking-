@@ -109,7 +109,7 @@ Notebook/03_model_training.ipynb
 Notebook/04_conclusion_and_discussion.ipynb
 ```
 
-4. Make sure the dataset files are in the `ata/` folder:
+4. Make sure the dataset files are in the `Data/` folder:
 
 ```text
 Data/hotel_bookings.csv

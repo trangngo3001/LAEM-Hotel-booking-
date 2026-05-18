@@ -73,11 +73,11 @@ predict whether a booking will be canceled before arrival.
 - **Returning guests** cancel at only **14.5%** vs **37.8%** for first-time guests
 
 **On the model:**
-- Logistic Regression baseline achieved approximately 0.80 accuracy and 0.85 ROC-AUC on the test set.
-- Results confirm that deposit type, lead time, hotel type, and special requests
-  are among the most informative features for classification
-- Class imbalance (63/37) means **F1-Score and ROC-AUC are the primary metrics**
-  — accuracy alone is misleading
+- Logistic Regression baseline achieved an accuracy of 0.8181 and a ROC-AUC score of 0.8993 on the test set.
+- The model achieved a weighted average F1-score of 0.81.
+- The F1-score for canceled bookings was 0.73, showing that the model can detect cancellations reasonably well, although some actual cancellations are still missed.
+- Model coefficients suggest that deposit policy, previous cancellation behavior, parking requests, room type, and country-related patterns are important features in the Logistic Regression model.
+- Class imbalance (63/37) means F1-Score and ROC-AUC are important metrics alongside accuracy.
 
 ---
 
@@ -87,7 +87,7 @@ predict whether a booking will be canceled before arrival.
 > directly encode the target variable and were removed before any modeling step.
 > Including them produces ~100% accuracy with no real predictive value.
 
-> **Class Imbalance:** Class Imbalance: The target variable has a 63/37 class distribution. Therefore, F1-Score and ROC-AUC are used alongside accuracy to evaluate model performance more appropriately.
+> **Class Imbalance:** The target variable has a 63/37 class distribution. Therefore, F1-Score and ROC-AUC are used alongside accuracy to evaluate model performance more appropriately.
 
 ---
 ## How to Run
@@ -109,7 +109,7 @@ Notebook/03_model_training.ipynb
 Notebook/04_conclusion_and_discussion.ipynb
 ```
 
-4. Make sure the dataset files are in the `data/` folder:
+4. Make sure the dataset files are in the `ata/` folder:
 
 ```text
 Data/hotel_bookings.csv

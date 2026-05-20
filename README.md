@@ -25,10 +25,10 @@ predict whether a booking will be canceled before arrival.
 │   └── hotel_bookings_cleaned_model.csv            <- Cleaned dataset used for analysis and modeling
 │
 ├── Notebook/
-│   ├── 01_understanding_and_eda_raw_data.ipynb     <- Step 1: Understanding dataset structure and EDA on raw data
-│   ├── 02_cleaning_raw_data.ipynb                  <- Step 2: Data cleaning and preprocessing
-│   ├── 03_eda_cleaned_data.ipynb                   <- Step 3: EDA on cleaned dataset
-│   ├── 04_model_training.ipynb                     <- Step 4: Logistic Regression & XGBoost modeling
+│   ├── 01_understanding_data.ipynb                 <- Step 1: Understanding dataset structure and EDA on raw data
+│   ├── 02_cleaning_data.ipynb                      <- Step 2: Data cleaning and preprocessing
+│   ├── 03_eda_modeling.ipynb                       <- Step 3: EDA on cleaned dataset
+│   ├── 04_model_training_xgboost.ipynb             <- Step 4: Logistic Regression & XGBoost modeling
 │   └── 05_conclusion_and_discussion.ipynb          <- Step 5: Final conclusions, recommendations, limitations
 │
 └── README.md                                       <- Project documentation
@@ -51,10 +51,10 @@ predict whether a booking will be canceled before arrival.
 
 | Step | Notebook | Description |
 | :--- | :--- | :--- |
-| 1 | `Notebook/01_understanding_and_eda_raw_data.ipynb` | Explored dataset structure, checked data types, analyzed missing values, examined numerical and categorical distributions, and identified potential outliers from the original dataset |
-| 2 | `Notebook/02_cleaning_raw_data.ipynb` | Cleaned the raw dataset by handling missing values, removing invalid records and outliers, dropping leakage columns, and performing feature engineering |
-| 3 | `Notebook/03_eda_cleaned_data.ipynb` | Conducted exploratory data analysis on the cleaned dataset to validate data quality and uncover business insights related to booking cancellation behavior |
-| 4 | `Notebook/04_model_training.ipynb` | Built preprocessing pipelines and trained classification models including Logistic Regression and XGBoost, followed by model evaluation using Accuracy, F1-Score, and ROC-AUC |
+| 1 | `Notebook/01_understanding_data.ipynb` | Explored dataset structure, checked data types, analyzed missing values, examined numerical and categorical distributions, and identified potential outliers from the original dataset |
+| 2 | `Notebook/02_cleaning_data.ipynb` | Cleaned the raw dataset by handling missing values, removing invalid records and outliers, dropping leakage columns, and performing feature engineering |
+| 3 | `Notebook/03_eda_modeling.ipynb` | Conducted exploratory data analysis on the cleaned dataset to validate data quality and uncover business insights related to booking cancellation behavior |
+| 4 | `Notebook/04_model_training_xgboost.ipynb` | Built preprocessing pipelines and trained classification models including Logistic Regression and XGBoost, followed by model evaluation using Accuracy, F1-Score, and ROC-AUC |
 | 5 | `Notebook/05_conclusion_and_discussion.ipynb` | Summarized findings, compared model performance, discussed business implications, limitations, and future improvements |
 
 ---
@@ -122,7 +122,7 @@ Because the dataset is moderately imbalanced (63/37), F1-Score and ROC-AUC were 
 1. Install the required libraries:
 
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn joblib
+pip install pandas numpy matplotlib seaborn scikit-learn joblib xgboost
 ```
 
 2. Open the project in Jupyter Notebook, JupyterLab, or VS Code.
@@ -132,8 +132,8 @@ pip install pandas numpy matplotlib seaborn scikit-learn joblib
 ```text
 Notebook/01_understanding_data.ipynb
 Notebook/02_cleaning_data.ipynb
-Notebook/03_eda_cleaned_data.ipynb
-Notebook/04_model_training.ipynb
+Notebook/03_eda_modeling.ipynb
+Notebook/04_model_training_.ipynb
 Notebook/05_conclusion_and_discussion.ipynb
 ```
 

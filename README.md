@@ -61,50 +61,50 @@ predict whether a booking will be canceled before arrival.
 
 ## Key Findings
 
-**On the data:**
-- **Deposit type** is the single strongest predictor: bookings with a Non Refund
-  deposit cancel at **99.4%**, while No Deposit bookings cancel at only **28.4%**
-- **Lead time** has a monotonic relationship with cancellation risk:
-  bookings made 180+ days in advance cancel at **57.0%** vs only **20.9%** for
-  bookings within 30 days
-- **City Hotel** cancels at **41.7%** vs Resort Hotel at **27.8%** — reflecting
-  the difference between business and leisure traveler behavior
-- Guests with **0 special requests + lead time > 90 days** cancel at **63.9%**
-  — the highest-volume risk profile in the dataset (32,507 bookings)
-- Guests with **prior cancellation history** cancel at **94.4%** on their next booking
-- **Returning guests** cancel at only **14.5%** vs **37.8%** for first-time guests
+### On the data
 
-# Model Performance
-## Logistic Regression
+- **Deposit type** is the strongest predictor of cancellation: bookings with a Non Refund deposit cancel at **99.4%**, while No Deposit bookings cancel at only **28.4%**.
+- **Lead time** has a monotonic relationship with cancellation risk: bookings made 180+ days in advance cancel at **57.0%**, compared with **20.9%** for bookings within 30 days.
+- **City Hotel** has a higher cancellation rate than Resort Hotel (**41.7% vs 27.8%**), reflecting different booking behaviors between city and leisure travel.
+- Guests with **0 special requests and lead time > 90 days** form a high-risk group, with a cancellation rate of **63.9%**.
+- Guests with **prior cancellation history** show a much higher cancellation risk.
+- **Returning guests** cancel less often than first-time guests, suggesting stronger customer loyalty and booking commitment.
 
-- Logistic Regression was used as the baseline classification model.
-- The model achieved strong overall performance with good interpretability.
-- Important predictive features included:
-  - Deposit type
-  - Previous cancellations
-  - Lead time
-  - Parking requests
-  - Room type
-  - Customer booking history
+---
 
-## XGBoost
+## Model Performance
 
-- XGBoost was introduced as an advanced ensemble learning model to improve predictive performance.
-- The model handled nonlinear relationships and feature interactions more effectively than Logistic Regression.
-- XGBoost achieved better classification performance, especially in identifying canceled bookings.
+### Logistic Regression Baseline
 
-## Evaluation Metrics
+Logistic Regression was used as the baseline classification model because it is simple, interpretable, and suitable for binary classification.
+
+- Accuracy: **0.7699**
+- ROC-AUC: **0.8573**
+- F1-score for canceled bookings: **0.7305**
+
+Logistic Regression provides a useful benchmark for evaluating whether more advanced models can improve prediction performance.
+
+### XGBoost Main Model
+
+XGBoost was used as the main model because it can capture non-linear relationships and interactions between features.
+
+- Accuracy: **0.8140**
+- ROC-AUC: **0.9077**
+- F1-score for canceled bookings: **0.7615**
+
+XGBoost outperformed the Logistic Regression baseline across all main evaluation metrics. This suggests that XGBoost is better at distinguishing between canceled and non-canceled bookings.
+
+### Evaluation Metrics
 
 The models were evaluated using:
 
-- **Accuracy**
-- **Precision**
-- **Recall**
-- **F1-Score**
-- **ROC-AUC**
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- ROC-AUC
 
-Because the dataset is moderately imbalanced (63/37), F1-Score and ROC-AUC were considered especially important for evaluating model quality.
-
+Because the dataset is moderately imbalanced, F1-score and ROC-AUC were considered especially important for evaluating model quality.
 
 ---
 

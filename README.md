@@ -133,7 +133,7 @@ pip install pandas numpy matplotlib seaborn scikit-learn joblib
 Notebook/01_understanding_data.ipynb
 Notebook/02_cleaning_data.ipynb
 Notebook/03_eda_cleaned_data.ipynb
-Notebook/04_model training.ipynb
+Notebook/04_model_training.ipynb
 Notebook/05_conclusion_and_discussion.ipynb
 ```
 
